@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+">
+    <aop:config>
+        <aop:advisor id="remoteTimeLog" advice-ref="remoteTimeAdvice"
+                     pointcut="execution(* com.platform4j.web.remote.*Remote.*(..))"/>
+    </aop:config>
+    <bean id="remoteTimeAdvice" class="com.platform4j.web.remote.aop.RemoteAdvice"/>
+
+    <aop:config>
+        <aop:advisor id="controllerAdvisor" advice-ref="controllerAdvice"
+                     pointcut="execution(* com.platform4j.web.webapp.HelloController.*(..))"/>
+    </aop:config>
+    <bean id="controllerAdvice" class="com.platform4j.web.webapp.aop.ControllerAdvice"/>
+
+</beans>

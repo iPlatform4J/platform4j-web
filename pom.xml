@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.platform4j.web</groupId>
+    <artifactId>platform4j-web</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>platform4j-web</name>
+    <packaging>pom</packaging>
+
+    <description>Platform4j Web Project</description>
+
+    <modules>
+        <module>web-domain</module>
+        <module>web-manager</module>
+        <module>web-remote</module>
+        <module>web-webapp</module>
+    </modules>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <springboot.version>2.3.5.RELEASE</springboot.version>
+        <platform4j.arch.version>1.0.0-SNAPSHOT</platform4j.arch.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.platform4j.arch</groupId>
+            <artifactId>arch-boot-web</artifactId>
+            <version>${platform4j.arch.version}</version>
+        </dependency>
+    </dependencies>
+</project>
